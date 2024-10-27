@@ -1,0 +1,440 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Space Grotesk' ;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  background: url(../img/card-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-inner {
+  padding-top: 32px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16px;
+  margin-bottom: 91px;
+  max-width: 343px;
+  margin-inline: auto;
+}
+
+.card-back {
+  background: linear-gradient(168.73deg, #FFFFFF 5%, #D2D3D9 91.69%);
+  position: relative;
+  width: 286px;
+  height: 157px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardLine {
+  display: block;
+  width: 286px;
+  height: 34.6px;
+  background-color: #2F2F2F;
+  position: absolute;
+  top: 15px;
+}
+
+.cvcNumber {
+  top: 65px;
+  position: absolute;
+  background-color: #ADB5BE;
+  color: #FFFFFF;
+  width: 230.98px;
+  height: 29.74px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 8.91px 10.79px 9.85px;
+}
+
+.card-front {
+  background: url(../img/card-front-background.png);
+  background-repeat: no-repeat;
+  width: 285px;
+  height: 156.21px;
+  border-radius: 6px;
+  padding: 17.6px 20.89px 20.6px 19px;
+  position: absolute;
+  top: 126px;
+  left: 20px;
+}
+
+.card-front img {
+  margin-bottom: 37px;
+}
+
+.numberTxt {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+  letter-spacing: 2.200000047683716px;
+  color: #fff;
+  margin-bottom: 17px;
+}
+
+.card-front-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-front-bottom span {
+font-size: 9px;
+font-weight: 500;
+line-height: 11.48px;
+letter-spacing: 1.2857142686843872px;
+color: #fff;
+}
+
+.card-input-inner {
+  max-width: 327px;
+  margin-inline: auto;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-input-inner input {
+  border-radius: 8px;
+  border: 1px solid #DFDEE0;
+  background-color: #FFFFFF;
+}
+
+.card-input p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.31px;
+  letter-spacing: 2px;
+  color: #21092F;
+  margin-bottom: 9px;
+}
+
+.card-bottom {
+  display: flex;
+  gap: 11px;
+}
+
+.month-year {
+  display: flex;
+  gap: 8px;
+}
+
+.month-year input {
+  width: 72px;
+  height: 45px;
+  padding: 11px 24px 11px 16px;
+}
+
+.cardHolderName input, .cardNumberTxt input {
+  width: 327px;
+  height: 45px;
+  padding: 11px 16px;
+}
+
+.cardCvc input {
+  width: 164px;
+  height: 45px;
+  padding: 11px 16px;
+}
+
+.confirmBtnTxt button {
+  background-color: #21092F;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+  color: #fff;
+  padding-block: 15px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.confirmBtn {
+  display: block;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #6348FE;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.invalid-input {
+  border: 1px solid red;
+}
+
+.thankYou {
+  max-width: 327px;
+  margin-inline: auto;
+  display: none;
+  padding-top: 48px;
+}
+
+.thankYou img {
+  margin-inline: auto;
+}
+
+.thankYouContent h4 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 35.73px;
+  letter-spacing: 3.422222137451172px;
+  text-align: center;
+  color: #21092F;
+  margin-top: 35px;
+  margin-bottom: 16px;
+}
+
+.thankYouContent p{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+  color: #8F8694;
+  margin-bottom: 48px;
+}
+
+.d-blok {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.continueBtnTxt button {
+  background-color: #21092F;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+  color: #fff;
+  padding-block: 15px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.continueBtn {
+  display: block;
+  width: 100%;
+}
+
+@media (width > 768px) {
+  .container {
+    display: flex;
+    gap: 124px;
+  }
+
+  .header {
+    background: url(../img/card-desktop-background.png);
+    height: 100vh;
+  }
+  
+  .header-inner {
+    padding-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 16px;
+    margin-bottom: 91px;
+    max-width: 343px;
+    margin-inline: auto;
+  }
+
+  .card-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-input-inner {
+    max-width: 381px;
+    padding-top: 0;
+    gap: 26px;
+  }
+  
+  .card-bottom {
+    display: flex;
+    gap: 11px;
+  }
+  
+  .month-year {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .month-year input {
+    width: 72px;
+    height: 45px;
+    padding: 11px 24px 11px 16px;
+  }
+  
+  .cardHolderName input, .cardNumberTxt input {
+    width: 327px;
+    height: 45px;
+    padding: 11px 16px;
+  }
+  
+  .cardCvc input {
+    width: 164px;
+    height: 45px;
+    padding: 11px 16px;
+  }
+  
+  .confirmBtnTxt button {
+    background-color: #21092F;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22.97px;
+    color: #fff;
+    padding-block: 15px;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  
+  .confirmBtn {
+    display: block;
+    width: 100%;
+  }
+  
+  input:focus {
+    outline: none;
+    border: 1px solid #6348FE;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .invalid-input {
+    border: 1px solid red;
+  }
+  
+  .thankYou {
+    max-width: 327px;
+    margin-inline: auto;
+    display: none;
+    padding-top: 48px;
+  }
+  
+  .thankYou img {
+    margin-inline: auto;
+  }
+  
+  .thankYouContent h4 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 35.73px;
+    letter-spacing: 3.422222137451172px;
+    text-align: center;
+    color: #21092F;
+    margin-top: 35px;
+    margin-bottom: 16px;
+  }
+  
+  .thankYouContent p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22.97px;
+    color: #8F8694;
+    margin-bottom: 48px;
+  }
+  
+  .d-blok {
+    display: block;
+  }
+  
+  .d-none {
+    display: none;
+  }
+  
+  .continueBtnTxt button {
+    background-color: #21092F;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22.97px;
+    color: #fff;
+    padding-block: 15px;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  
+  .continueBtn {
+    display: block;
+    width: 100%;
+  }
+}
