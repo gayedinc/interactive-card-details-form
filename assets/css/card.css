@@ -127,6 +127,36 @@ a {
   margin-bottom: 37px;
 }
 
+/* hatalı giriş yapılmış inputlar için */
+input:invalid {
+  border: 1px solid #FF5050;
+}
+
+/* hatalı giriş yapıldığında hata mesajını göster */
+input:invalid + .error-msg {
+  display: inline;
+  color: #FF5050;
+
+}
+
+/* hata mesajlarını ilk başta gizle */
+.error-msg {
+  display: none;
+}
+
+/* Geçerli olmayan input için stil */
+.card-input-inner .invalid-input {
+  border: 1px solid #FF5050;
+}
+
+.card-input-inner .invalid-input + .error-msg {
+  display: inline;
+  color: #FF5050;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.31px;
+}
+
 .numberTxt {
   font-size: 18px;
   font-weight: 500;
@@ -142,11 +172,11 @@ a {
 }
 
 .card-front-bottom span {
-font-size: 9px;
-font-weight: 500;
-line-height: 11.48px;
-letter-spacing: 1.2857142686843872px;
-color: #fff;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 11.48px;
+  letter-spacing: 1.2857142686843872px;
+  color: #fff;
 }
 
 .card-input-inner {
@@ -170,7 +200,6 @@ color: #fff;
   line-height: 15.31px;
   letter-spacing: 2px;
   color: #21092F;
-  margin-bottom: 9px;
 }
 
 .card-bottom {
@@ -180,6 +209,7 @@ color: #fff;
 
 .month-year {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -223,16 +253,6 @@ input:focus {
   border: 1px solid #6348FE;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.invalid-input {
-  border: 1px solid red;
-}
-
 .thankYou {
   max-width: 327px;
   margin-inline: auto;
@@ -264,14 +284,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-bottom: 48px;
 }
 
-.d-blok {
-  display: block;
-}
-
-.d-none {
-  display: none;
-}
-
 .continueBtnTxt button {
   background-color: #21092F;
   border-radius: 8px;
@@ -286,7 +298,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .continueBtn {
   display: block;
-  width: 100%;
+}
+
+.cardHolderName, .cardNumberTxt, .cardDate, .cardCvc {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
 }
 
 @media (width > 768px) {
@@ -298,26 +315,29 @@ input[type="number"]::-webkit-inner-spin-button {
   .header {
     background: url(../img/card-desktop-background.png);
     height: 100vh;
+    width: 483px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .header-inner {
-    padding-top: 0;
+    padding-block: 186px;
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 16px;
-    margin-bottom: 91px;
-    max-width: 343px;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 0;
+    max-width: 541px;
     margin-inline: auto;
   }
 
   .card-input {
     display: flex;
     align-items: center;
+    margin-inline: auto;
   }
   
   .card-input-inner {
-    max-width: 381px;
+    min-width: 381px;
     padding-top: 0;
     gap: 26px;
   }
@@ -330,23 +350,21 @@ input[type="number"]::-webkit-inner-spin-button {
   .month-year {
     display: flex;
     gap: 8px;
+    min-width: 170px;
   }
   
   .month-year input {
     width: 72px;
-    height: 45px;
     padding: 11px 24px 11px 16px;
   }
   
   .cardHolderName input, .cardNumberTxt input {
-    width: 327px;
-    height: 45px;
+    min-width: 381px;
     padding: 11px 16px;
   }
   
   .cardCvc input {
-    width: 164px;
-    height: 45px;
+    min-width: 191px;
     padding: 11px 16px;
   }
   
@@ -370,16 +388,6 @@ input[type="number"]::-webkit-inner-spin-button {
   input:focus {
     outline: none;
     border: 1px solid #6348FE;
-  }
-  
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  .invalid-input {
-    border: 1px solid red;
   }
   
   .thankYou {
@@ -412,16 +420,8 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #8F8694;
     margin-bottom: 48px;
   }
-  
-  .d-blok {
-    display: block;
-  }
-  
-  .d-none {
-    display: none;
-  }
-  
-  .continueBtnTxt button {
+
+  .continueBtnTxt a {
     background-color: #21092F;
     border-radius: 8px;
     font-size: 18px;
@@ -435,6 +435,52 @@ input[type="number"]::-webkit-inner-spin-button {
   
   .continueBtn {
     display: block;
-    width: 100%;
   }
+
+  .card-front {
+    background: url(../img/card-front-background-desktop.png);
+    left: 164px;
+    top: 187px;
+    width: 447px;
+    height: 245px;
+    padding: 28px 32px;
+  }
+
+  .card-back {
+    top: 280px;
+    left: 258px;
+    width: 447px;
+    height: 245px;
+  }
+
+  .cardLine {
+    display: block;
+    width: 447px;
+    height: 54px;
+    top: 23px;
+  }
+
+  .cvcNumber {
+    top: 101px;
+    width: 361px;
+    height: 38px;
+    padding: 10px 16px;
+  }
+
+  .numberTxt {
+    margin-bottom: 25.5px;
+    font-size: 28px;
+    line-height: 35.73px;
+    letter-spacing: 3.422222137451172px;
+  }
+
+  .card-front-bottom span {
+    font-size: 14px;
+    line-height: 17.86px;
+    letter-spacing: 2px;
+  }
+
+  .card-front img {
+    margin-bottom: 64px;
+}
 }
