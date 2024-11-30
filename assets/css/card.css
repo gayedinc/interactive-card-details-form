@@ -341,7 +341,6 @@ input:focus {
   .header-inner {
     padding-block: 186px;
     position: relative;
-    display: block;
     margin-right: 0;
     margin-bottom: 0;
     max-width: 541px;
