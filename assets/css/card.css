@@ -123,6 +123,12 @@ a {
   left: 20px;
 }
 
+.card-input, .thankYouContent {
+  display: flex;
+  align-items: center;
+  margin-inline: auto;
+}
+
 .card-front img {
   margin-bottom: 37px;
 }
@@ -256,7 +262,6 @@ input:focus {
 .thankYou {
   max-width: 327px;
   margin-inline: auto;
-  display: none;
   padding-top: 48px;
 }
 
@@ -306,6 +311,19 @@ input:focus {
   gap: 8px;
 }
 
+.thankYouContent {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+.d-none {
+  display: none;
+}
+
 @media (width > 768px) {
   .container {
     display: flex;
@@ -327,12 +345,6 @@ input:focus {
     margin-right: 0;
     margin-bottom: 0;
     max-width: 541px;
-    margin-inline: auto;
-  }
-
-  .card-input {
-    display: flex;
-    align-items: center;
     margin-inline: auto;
   }
   
@@ -388,13 +400,6 @@ input:focus {
   input:focus {
     outline: none;
     border: 1px solid #6348FE;
-  }
-  
-  .thankYou {
-    max-width: 327px;
-    margin-inline: auto;
-    display: none;
-    padding-top: 48px;
   }
   
   .thankYou img {

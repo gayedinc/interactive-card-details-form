@@ -1,5 +1,6 @@
 // confirm butonunu seçme ve olay dinleyici atama
 const confirmBtn = document.querySelector('.confirmBtn');
+const thankYou = document.querySelector('.thankYouContent');
 confirmBtn.addEventListener('click', handleConfirmDatas);
 
 const nameInput = document.querySelector('.nameInput');
@@ -61,7 +62,7 @@ function handleConfirmDatas(event) {
     document.querySelector('.yearInput').nextElementSibling.style.display = 'none';
   }
 
-  if (!cvcValid) {
+  if (!cvcValid) { // eğer cvc number boşsa
     document.querySelector('.cvcInput').classList.add('invalid-input');
     document.querySelector('.cvcInput').nextElementSibling.style.display = 'inline';
   } else {
@@ -73,19 +74,21 @@ function handleConfirmDatas(event) {
   if (nameValid && cardValid && monthValid && yearValid && cvcValid) {
 
     // Thank You sayfasını çıkart
-    document.querySelector('.thankYou').classList.add('d-blok');
+    thankYou.classList.add('d-flex');
 
     // Bilgi giriş sayfasını gizle
     document.querySelector('.card-input').classList.add('d-none');
 
     // Kredi kartının içerisine girilen değerleri yaz
     document.querySelector('.cardName').innerText = nameInput.value.trim();
-    document.querySelector('.cvcNumber').innerText = cvcInput.value.trim();
     document.querySelector('.numberTxt').innerText = cardNumber.value.trim();
     document.querySelector('.monthText').innerText = monthInput.value.trim();
     document.querySelector('.yearText').innerText = yearInput.value.trim();
+    document.querySelector('.cvcNumber').innerText = cvcInput.value.trim();
   }
 }
+
+
 
 // Dinamik - eş zamanlı olarak card öğelerine değer atama
 nameInput.addEventListener('keyup', function () {
