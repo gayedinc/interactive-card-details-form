@@ -56,10 +56,8 @@ function handleConfirmDatas(event) {
 
   if (!yearValid) { // eğer yıl boşsa
     document.querySelector('.yearInput').classList.add('invalid-input');
-    document.querySelector('.yearInput').nextElementSibling.style.display = 'inline';
   } else {
     document.querySelector('.yearInput').classList.remove('invalid-input');
-    document.querySelector('.yearInput').nextElementSibling.style.display = 'none';
   }
 
   if (!cvcValid) { // eğer cvc number boşsa

@@ -219,6 +219,12 @@ input:invalid + .error-msg {
   gap: 8px;
 }
 
+.month-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .month-year input {
   width: 72px;
   height: 45px;
@@ -319,8 +325,11 @@ input:focus {
   display: flex;
 }
 
-
 .d-none {
+  display: none;
+}
+
+.year-input span {
   display: none;
 }
 
@@ -359,14 +368,7 @@ input:focus {
   }
   
   .month-year {
-    display: flex;
-    gap: 8px;
     min-width: 170px;
-  }
-  
-  .month-year input {
-    width: 72px;
-    padding: 11px 24px 11px 16px;
   }
   
   .cardHolderName input, .cardNumberTxt input {
